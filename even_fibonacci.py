@@ -14,9 +14,16 @@ def Fib(i):
     else:
         return Fib(i-1) + Fib(i-2)
 
-for i in range(1, 4000000):
+for i in range(1, 20):
     if Fib(i)%2 == 0:
         f_nums.append(Fib(i))
 
-print(sum(f_nums))
-print(f_nums)
+f = open("fib_res", 'w')
+f.write("Fibonacci total: ")
+f.write(str(sum(f_nums)))
+f.write("\n")
+f.write("Even fibonacci's: ")
+f.write(str(f_nums))
+f.write("\n")
+f.write("Fibonacci numbers: ")
+f.close()
